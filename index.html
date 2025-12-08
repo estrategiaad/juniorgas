@@ -370,12 +370,12 @@
                     <p class="mt-4 text-lg text-gray-600">Soluções completas em gás GLP e água mineral para sua casa ou negócio.</p>
                 </div>
 
-                <!-- Grid ajustado para alinhar itens verticalmente -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+                <!-- Grid ajustado: removido 'items-start' para que os cards estiquem (stretch) e tenham a mesma altura -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     
                     <!-- Card P13 (COM DESTAQUE) -->
-                    <!-- Alterações: border-2 border-[#E4202C], shadow-2xl, relative, transform lg:-translate-y-4 (sobe um pouco no desktop), z-10 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-2xl border-2 border-[#E4202C] relative transform lg:-translate-y-4 z-10" data-aos="fade-up" data-aos-delay="0">
+                    <!-- Adicionado: flex flex-col h-full -->
+                    <div class="bg-white p-8 rounded-2xl shadow-2xl border-2 border-[#E4202C] relative transform lg:-translate-y-4 z-10 flex flex-col h-full" data-aos="fade-up" data-aos-delay="0">
                         <!-- Selo de Mais Vendido -->
                         <div class="absolute top-0 right-0 bg-[#E4202C] text-white text-xs font-bold px-4 py-2 rounded-bl-xl rounded-tr-xl uppercase tracking-wider shadow-sm">
                             Mais Pedido
@@ -383,41 +383,47 @@
                         
                         <!-- SEO: Lazy Loading -->
                         <img src="p13.webp" alt="Botijão de Gás GLP P13 - O Mais Vendido" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x300/0D3B66/FFFFFF?text=Gás+P13';">
-                        <div class="">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P13</h3>
-                            <p class="text-gray-600 mb-6">O tradicional gás de cozinha, ideal para residências. Seguro, econômico e com a qualidade Supergasbras que você confia.</p>
-                            <!-- Link com cor alterada e fundo leve para destaque -->
-                            <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="inline-block w-full text-center bg-[#E4202C] text-white font-bold py-3 rounded-lg hover:bg-[#b01922] transition-colors shadow-md">
-                                Peça agora &rarr;
-                            </a>
-                        </div>
+                        <!-- Removida div wrapper interna para o flex-grow funcionar corretamente no paragrafo -->
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P13</h3>
+                        <!-- Adicionado flex-grow para empurrar o botão para baixo -->
+                        <p class="text-gray-600 mb-6 flex-grow">O tradicional gás de cozinha, ideal para residências. Seguro, econômico e com a qualidade Supergasbras que você confia.</p>
+                        <!-- Link com mt-auto para garantir alinhamento no fundo -->
+                        <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="mt-auto inline-block w-full text-center bg-[#E4202C] text-white font-bold py-3 rounded-lg hover:bg-[#b01922] transition-colors shadow-md">
+                            Peça agora &rarr;
+                        </a>
                     </div>
 
-                    <!-- Card P20 --><div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Card P20 -->
+                    <!-- Adicionado: flex flex-col h-full -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
                          <!-- SEO: Lazy Loading --><img src="p20.webp" alt="Botijão de Gás GLP P20" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P20';">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P20</h3>
-                        <p class="text-gray-600 mb-6">Perfeito para empilhadeiras, garantindo maior autonomia e eficiência para a sua operação logística.</p>
-                         <!-- Link com cor alterada -->
-                         <!-- Adicionado evento de conversão -->
-                         <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="text-[#E4202C] font-semibold hover:underline block mt-4">Saiba mais &rarr;</a>
+                        <!-- Adicionado flex-grow -->
+                        <p class="text-gray-600 mb-6 flex-grow">Perfeito para empilhadeiras, garantindo maior autonomia e eficiência para a sua operação logística.</p>
+                         <!-- Link com mt-auto -->
+                         <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="mt-auto text-[#E4202C] font-semibold hover:underline block text-center border border-[#E4202C] py-2 rounded-lg hover:bg-[#E4202C] hover:text-white transition-all">Saiba mais &rarr;</a>
                     </div>
                     
-                    <!-- Card P45 --><div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Card P45 -->
+                    <!-- Adicionado: flex flex-col h-full -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
                         <!-- SEO: Lazy Loading --><img src="p45.webp" alt="Botijão de Gás GLP P45" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P45';">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P45</h3>
-                        <p class="text-gray-600 mb-6">A solução para comércios e indústrias com alto consumo, como restaurantes e padarias. Mais potência e durabilidade.</p>
-                         <!-- Link com cor alterada -->
-                         <!-- Adicionado evento de conversão -->
-                         <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="text-[#E4202C] font-semibold hover:underline block mt-4">Consulte &rarr;</a>
+                        <!-- Adicionado flex-grow -->
+                        <p class="text-gray-600 mb-6 flex-grow">A solução para comércios e indústrias com alto consumo, como restaurantes e padarias. Mais potência e durabilidade.</p>
+                         <!-- Link com mt-auto -->
+                         <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="mt-auto text-[#E4202C] font-semibold hover:underline block text-center border border-[#E4202C] py-2 rounded-lg hover:bg-[#E4202C] hover:text-white transition-all">Consulte &rarr;</a>
                     </div>
 
-                    <!-- Card Água Mineral (Novo) --><div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Card Água Mineral (Novo) -->
+                    <!-- Adicionado: flex flex-col h-full -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
                         <!-- SEO: Lazy Loading --><img src="agua.webp" alt="Galão de Água Mineral 20L" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Água+20L';">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Água Mineral - Galão 20L</h3>
-                        <p class="text-gray-600 mb-6">Trabalhamos com diversas marcas de água mineral. Praticidade e qualidade para sua hidratação diária.</p>
-                         <!-- Link com cor alterada -->
-                         <!-- Adicionado evento de conversão -->
-                         <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="text-[#E4202C] font-semibold hover:underline block mt-4">Pedir Água &rarr;</a>
+                        <!-- Adicionado flex-grow -->
+                        <p class="text-gray-600 mb-6 flex-grow">Trabalhamos com diversas marcas de água mineral. Praticidade e qualidade para sua hidratação diária.</p>
+                         <!-- Link com mt-auto -->
+                         <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="mt-auto text-[#E4202C] font-semibold hover:underline block text-center border border-[#E4202C] py-2 rounded-lg hover:bg-[#E4202C] hover:text-white transition-all">Pedir Água &rarr;</a>
                     </div>
                 </div>
             </div>
