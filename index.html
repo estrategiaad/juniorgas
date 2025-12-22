@@ -23,18 +23,37 @@
 
     <!-- Event snippet for Contato conversion page -->
     <script>
+    // Função global de conversão com fallback de segurança
     function gtag_report_conversion(url) {
       var callback = function () {
         if (typeof(url) != 'undefined') {
           window.location = url;
         }
       };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-17789847680/iHc-CImrnc4bEICR7qJC',
-          'value': 1.0,
-          'currency': 'BRL',
-          'event_callback': callback
-      });
+      
+      // Tenta enviar o evento para o Google
+      try {
+          gtag('event', 'conversion', {
+              'send_to': 'AW-17789847680/iHc-CImrnc4bEICR7qJC',
+              'value': 1.0,
+              'currency': 'BRL',
+              'event_callback': callback
+          });
+      } catch (e) {
+          // Se der erro (ex: bloqueador de anúncio), redireciona mesmo assim
+          console.log('Erro ao registrar conversão, redirecionando...', e);
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+      }
+      
+      // Fallback de segurança: se o callback do Google não responder em 1s, redireciona
+      setTimeout(function() {
+         if (typeof(url) != 'undefined') {
+            window.location = url;
+         }
+      }, 1000);
+
       return false;
     }
     </script>
@@ -581,7 +600,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-[#E4202C] text-white font-bold py-4 rounded-xl shadow-lg hover:bg-[#b01922] transition transform hover:scale-105 flex items-center justify-center gap-2 text-lg">
+                        <button id="submit-btn" type="submit" class="w-full bg-[#E4202C] text-white font-bold py-4 rounded-xl shadow-lg hover:bg-[#b01922] transition transform hover:scale-105 flex items-center justify-center gap-2 text-lg">
                             <span>Confirmar Pedido no WhatsApp</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
                         </button>
@@ -783,6 +802,8 @@
         function submitOrder(event) {
             event.preventDefault();
             
+            const btn = document.getElementById('submit-btn');
+            
             const name = document.getElementById('order-name').value;
             const phone = document.getElementById('order-phone').value;
             const address = document.getElementById('order-address').value;
@@ -814,6 +835,11 @@
             // Número da Empresa (Sem caracteres especiais)
             const phoneNum = "5561983474674"; 
             const url = `https://wa.me/${phoneNum}?text=${message}`;
+            
+            // Feedback Visual no botão
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span>Processando... Redirecionando para o WhatsApp 🔄</span>';
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
             
             // Chama a conversão do Google Ads e redireciona
             gtag_report_conversion(url);
