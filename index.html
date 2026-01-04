@@ -40,14 +40,12 @@
               'event_callback': callback
           });
       } catch (e) {
-          // Se der erro (ex: bloqueador de anúncio), redireciona mesmo assim
           console.log('Erro ao registrar conversão, redirecionando...', e);
           if (typeof(url) != 'undefined') {
             window.location = url;
           }
       }
       
-      // Fallback de segurança: se o callback do Google não responder em 1s, redireciona
       setTimeout(function() {
          if (typeof(url) != 'undefined') {
             window.location = url;
@@ -81,11 +79,9 @@
             background-color: #F8F9FA;
         }
         .hero-gradient {
-            /* Cor de fundo alterada para #e8efff conforme solicitado */
             background-color: #e8efff;
         }
         .cta-gradient {
-            /* Gradiente Elegante: Azul Profundo (#1e3a8a) transitando suavemente para o tom do rodapé (#6e7597) */
             background: linear-gradient(135deg, #1e3a8a 0%, #4a5568 50%, #6e7597 100%);
             background-size: 200% 200%;
             animation: gradient-animation 15s ease infinite;
@@ -99,7 +95,6 @@
             transform: rotate(180deg);
         }
         
-        /* Estilos do Swiper */
         .testimonial-slider.swiper-container {
             width: 100%;
             padding-bottom: 50px;
@@ -114,11 +109,9 @@
             opacity: 1;
         }
         .swiper-pagination-bullet-active {
-            /* Cor alterada para #E4202C */
             background: #E4202C;
         }
 
-        /* Estilos do Swiper do Hero */
         .hero-swiper-container {
             width: 100%;
             height: 100%;
@@ -133,13 +126,12 @@
             height: 10px;
         }
         .hero-swiper-container .swiper-pagination-bullet-active {
-            /* Cor alterada para #E4202C */
             background: #E4202C;
             opacity: 1;
         }
     </style>
 
-    <!-- SEO: JSON-LD Schema (Dados Estruturados) --><!-- Substitua pelo seu domínio final e confirme os horários --><script type="application/ld+json">
+    <!-- SEO: JSON-LD Schema (Dados Estruturados) --><script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -168,22 +160,18 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
                     <a href="#" class="flex items-center text-xl font-bold text-gray-900">
-                        <!-- Logotipo adicionado --><img src="logo.webp" alt="Logotipo Júnior Gás DF - LS Gás" class="h-10 w-auto mr-2" onerror="this.onerror=null;this.src='https://placehold.co/100x40/0D3B66/FFFFFF?text=Logo';">
-                        <!-- Texto original com a nova cor #E4202C -->Júnior Gás DF - LS Gás <span class="text-[#E4202C] mx-1">-</span> <span class="font-light text-[#E4202C]">Supergasbras</span>
+                        <img src="logo.webp" alt="Logotipo Júnior Gás DF - LS Gás" class="h-10 w-auto mr-2" onerror="this.onerror=null;this.src='https://placehold.co/100x40/0D3B66/FFFFFF?text=Logo';">
+                        Júnior Gás DF - LS Gás <span class="text-[#E4202C] mx-1">-</span> <span class="font-light text-[#E4202C]">Supergasbras</span>
                     </a>
                 </div>
                 <nav class="hidden md:flex md:items-center md:space-x-8">
-                    <!-- Hover text alterado para #E4202C -->
                     <a href="#testimonials" class="text-gray-600 hover:text-[#E4202C] transition-colors">Depoimentos</a>
                     <a href="#features" class="text-gray-600 hover:text-[#E4202C] transition-colors">Produtos</a>
                     <a href="#why-choose" class="text-gray-600 hover:text-[#E4202C] transition-colors">Sobre nós</a>
-                    <!-- Novo Link Adicionado -->
                     <a href="#order-form" class="text-gray-600 hover:text-[#E4202C] transition-colors font-medium">Pedido On-line</a>
                     <a href="#faq" class="text-gray-600 hover:text-[#E4202C] transition-colors">FAQ</a>
                 </nav>
                 <div class="flex items-center">
-                    <!-- Botão com fundo #E4202C e hover ajustado para #b01922 -->
-                    <!-- Adicionado evento de conversão -->
                     <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="hidden sm:inline-block bg-[#E4202C] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#b01922] transition-all transform hover:scale-105">
                         Faça seu pedido
                     </a>
@@ -193,14 +181,12 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu --><div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+        <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white">
             <a href="#testimonials" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2">Depoimentos</a>
             <a href="#features" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2">Produtos</a>
             <a href="#why-choose" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2">Sobre nós</a>
-            <!-- Novo Link Adicionado no Mobile -->
             <a href="#order-form" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2 font-medium">Pedido On-line</a>
             <a href="#faq" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2">FAQ</a>
-             <!-- Adicionado evento de conversão -->
              <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="block w-full text-center bg-[#E4202C] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#b01922] transition-all mt-2">
                 Faça seu pedido
             </a>
@@ -219,8 +205,6 @@
                             10.000+ clientes satisfeitos.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <!-- Botão Hero com nova cor -->
-                            <!-- Adicionado evento de conversão -->
                             <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="bg-[#E4202C] text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-[#b01922] transition-all transform hover:scale-105 text-lg">
                                 Encomende agora com desconto
                             </a>
@@ -235,30 +219,30 @@
                     <div class="relative" data-aos="fade-left" data-aos-delay="200">
                         <div class="w-3/4 mx-auto">
                             <div class="aspect-square rounded-2xl shadow-2xl overflow-hidden">
-                                <!-- Container de imagem estática para Swiper Carousel --><div id="hero-image-slider" class="relative w-full h-full hero-swiper-container swiper-container">
+                                <div id="hero-image-slider" class="relative w-full h-full hero-swiper-container swiper-container">
                                     <div class="swiper-wrapper">
-                                        <!-- Slide 1 --><div class="swiper-slide">
+                                        <div class="swiper-slide">
                                             <img src="gas1.webp" alt="Entrega de gás da Júnior Gás DF - LS Gás em Brasília" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+1';">
                                         </div>
-                                        <!-- Slide 2 --><div class="swiper-slide">
+                                        <div class="swiper-slide">
                                             <img src="gas2.webp" alt="Equipe Júnior Gás DF - LS Gás" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+2';">
                                         </div>
-                                        <!-- Slide 3 --><div class="swiper-slide">
+                                        <div class="swiper-slide">
                                             <img src="gas3.webp" alt="Botijão Supergasbras P13" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+3';">
                                         </div>
-                                        <!-- Slide 4 --><div class="swiper-slide">
+                                        <div class="swiper-slide">
                                             <img src="gas4.webp" alt="Atendimento ao cliente Júnior Gás DF - LS Gás" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+4';">
                                         </div>
-                                        <!-- Slide 5 --><div class="swiper-slide">
+                                        <div class="swiper-slide">
                                             <img src="gas5.webp" alt="Entrega rápida Riacho Fundo" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+5';">
                                         </div>
-                                        <!-- Slide 6 --><div class="swiper-slide">
+                                        <div class="swiper-slide">
                                             <img src="gas6.webp" alt="Gás para comércio e indústria" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+6';">
                                         </div>
-                                        <!-- Slide 7 --><div class="swiper-slide">
+                                        <div class="swiper-slide">
                                             <img src="gas7.webp" alt="Qualidade Supergasbras" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+7';">
                                         </div>
-                                        <!-- Slide 8 --><div class="swiper-slide">
+                                        <div class="swiper-slide">
                                             <img src="gas8.webp" alt="Júnior Gás DF - LS Gás em Águas Claras" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D3B66/FFFFFF?text=Imagem+8';">
                                         </div>
                                     </div>
@@ -277,10 +261,8 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">O que nossos clientes dizem</h2>
                     <p class="mt-4 text-lg text-gray-600">A satisfação de quem confia em nosso trabalho.</p>
                 </div>
-                <!-- Swiper.js Carousel -->
                 <div class="swiper-container testimonial-slider" data-aos="fade-up">
                     <div class="swiper-wrapper">
-                        <!-- Testimonial 1: Lucelio Couto -->
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
@@ -293,7 +275,6 @@
                                 <cite class="mt-4 font-semibold text-gray-900 not-italic">- Lucelio Couto</cite>
                             </div>
                         </div>
-                        <!-- Testimonial 2: Crys Gouveia -->
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
@@ -306,7 +287,6 @@
                                 <cite class="mt-4 font-semibold text-gray-900 not-italic">- Crys Gouveia</cite>
                             </div>
                         </div>
-                        <!-- Testimonial 3: Pimentel -->
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
@@ -319,7 +299,6 @@
                                 <cite class="mt-4 font-semibold text-gray-900 not-italic">- Pimentel</cite>
                             </div>
                         </div>
-                        <!-- Testimonial 4: Raimundo Ferreira -->
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
@@ -332,7 +311,6 @@
                                 <cite class="mt-4 font-semibold text-gray-900 not-italic">- Raimundo Ferreira</cite>
                             </div>
                         </div>
-                        <!-- Testimonial 5: Luciene Couto -->
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
@@ -345,7 +323,6 @@
                                 <cite class="mt-4 font-semibold text-gray-900 not-italic">- Luciene Couto</cite>
                             </div>
                         </div>
-                        <!-- Testimonial 6: Patricia Silva -->
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
@@ -358,7 +335,6 @@
                                 <cite class="mt-4 font-semibold text-gray-900 not-italic">- Patricia Silva</cite>
                             </div>
                         </div>
-                        <!-- Testimonial 7: Maria Luisa -->
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
@@ -371,7 +347,6 @@
                                 <cite class="mt-4 font-semibold text-gray-900 not-italic">- Maria Luisa</cite>
                             </div>
                         </div>
-                        <!-- Testimonial 8: Robson Santos -->
                         <div class="swiper-slide testimonial-slide p-2">
                             <div class="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col w-full">
                                 <div class="flex items-center mb-4">
@@ -401,55 +376,41 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     
                     <!-- Card P13 (COM DESTAQUE) -->
-                    <!-- Adicionado: flex flex-col h-full -->
                     <div class="bg-white p-8 rounded-2xl shadow-2xl border-2 border-[#E4202C] relative transform lg:-translate-y-4 z-10 flex flex-col h-full" data-aos="fade-up" data-aos-delay="0">
-                        <!-- Selo de Mais Vendido -->
                         <div class="absolute top-0 right-0 bg-[#E4202C] text-white text-xs font-bold px-4 py-2 rounded-bl-xl rounded-tr-xl uppercase tracking-wider shadow-sm">
                             Mais Pedido
                         </div>
-                        
-                        <!-- SEO: Lazy Loading -->
                         <img src="p13.webp" alt="Botijão de Gás GLP P13 - O Mais Vendido" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x300/0D3B66/FFFFFF?text=Gás+P13';">
-                        <!-- Removida div wrapper interna para o flex-grow funcionar corretamente no paragrafo -->
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P13</h3>
-                        <!-- Adicionado flex-grow para empurrar o botão para baixo -->
+                        <p class="text-brand-blue font-bold text-xl mb-2">R$ 110,00</p>
                         <p class="text-gray-600 mb-6 flex-grow">O tradicional gás de cozinha, ideal para residências. Seguro, econômico e com a qualidade Supergasbras que você confia.</p>
-                        <!-- Link com mt-auto para garantir alinhamento no fundo -->
                         <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="mt-auto inline-block w-full text-center bg-[#E4202C] text-white font-bold py-3 rounded-lg hover:bg-[#b01922] transition-colors shadow-md">
                             Peça agora &rarr;
                         </a>
                     </div>
 
                     <!-- Card P20 -->
-                    <!-- Adicionado: flex flex-col h-full -->
                     <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
-                         <!-- SEO: Lazy Loading --><img src="p20.webp" alt="Botijão de Gás GLP P20" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P20';">
+                         <img src="p20.webp" alt="Botijão de Gás GLP P20" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P20';">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P20</h3>
-                        <!-- Adicionado flex-grow -->
                         <p class="text-gray-600 mb-6 flex-grow">Perfeito para empilhadeiras, garantindo maior autonomia e eficiência para a sua operação logística.</p>
-                         <!-- Link com mt-auto -->
                          <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="mt-auto text-[#E4202C] font-semibold hover:underline block text-center border border-[#E4202C] py-2 rounded-lg hover:bg-[#E4202C] hover:text-white transition-all">Saiba mais &rarr;</a>
                     </div>
                     
                     <!-- Card P45 -->
-                    <!-- Adicionado: flex flex-col h-full -->
                     <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
-                        <!-- SEO: Lazy Loading --><img src="p45.webp" alt="Botijão de Gás GLP P45" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P45';">
+                        <img src="p45.webp" alt="Botijão de Gás GLP P45" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Gás+P45';">
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Gás GLP P45</h3>
-                        <!-- Adicionado flex-grow -->
                         <p class="text-gray-600 mb-6 flex-grow">A solução para comércios e indústrias com alto consumo, como restaurantes e padarias. Mais potência e durabilidade.</p>
-                         <!-- Link com mt-auto -->
                          <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="mt-auto text-[#E4202C] font-semibold hover:underline block text-center border border-[#E4202C] py-2 rounded-lg hover:bg-[#E4202C] hover:text-white transition-all">Consulte &rarr;</a>
                     </div>
 
                     <!-- Card Água Mineral (Novo) -->
-                    <!-- Adicionado: flex flex-col h-full -->
                     <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
-                        <!-- SEO: Lazy Loading --><img src="agua.webp" alt="Galão de Água Mineral 20L" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Água+20L';">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Água Mineral - Galão 20L</h3>
-                        <!-- Adicionado flex-grow -->
+                        <img src="agua.webp" alt="Galão de Água Mineral 20L" class="w-full rounded-xl object-cover mb-6 aspect-square" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x250/0D3B66/FFFFFF?text=Água+20L';">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Água Mineral 20L</h3>
+                        <p class="text-brand-blue font-bold text-xl mb-2">R$ 30,00</p>
                         <p class="text-gray-600 mb-6 flex-grow">Trabalhamos com diversas marcas de água mineral. Praticidade e qualidade para sua hidratação diária.</p>
-                         <!-- Link com mt-auto -->
                          <a href="#order-form" class="mt-auto text-[#E4202C] font-semibold hover:underline block text-center border border-[#E4202C] py-2 rounded-lg hover:bg-[#E4202C] hover:text-white transition-all">Pedir Água &rarr;</a>
                     </div>
                 </div>
@@ -520,12 +481,12 @@
                                         </div>
                                         <div>
                                             <p class="font-bold text-gray-800">Gás de Cozinha P13</p>
-                                            <p class="text-xs text-gray-500">Botijão Residencial</p>
+                                            <p class="text-sm text-blue-600 font-bold">R$ 110,00</p>
                                         </div>
                                     </div>
                                     <div class="flex items-center">
                                         <button type="button" onclick="adjustQty('qty-p13', -1)" class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 flex items-center justify-center font-bold">-</button>
-                                        <input type="number" id="qty-p13" value="0" min="0" class="w-12 text-center mx-2 border-none bg-transparent font-bold text-gray-800 focus:ring-0" readonly>
+                                        <input type="number" id="qty-p13" value="0" min="0" class="w-12 text-center mx-2 border-none bg-transparent font-bold text-gray-800 focus:ring-0" readonly onchange="updateTotal()">
                                         <button type="button" onclick="adjustQty('qty-p13', 1)" class="w-8 h-8 rounded-full bg-blue-600 text-white hover:bg-blue-700 flex items-center justify-center font-bold">+</button>
                                     </div>
                                 </div>
@@ -538,12 +499,12 @@
                                         </div>
                                         <div>
                                             <p class="font-bold text-gray-800">Água Mineral 20L</p>
-                                            <p class="text-xs text-gray-500">Galão Retornável</p>
+                                            <p class="text-sm text-blue-600 font-bold">R$ 30,00</p>
                                         </div>
                                     </div>
                                     <div class="flex items-center">
                                         <button type="button" onclick="adjustQty('qty-water', -1)" class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 flex items-center justify-center font-bold">-</button>
-                                        <input type="number" id="qty-water" value="0" min="0" class="w-12 text-center mx-2 border-none bg-transparent font-bold text-gray-800 focus:ring-0" readonly>
+                                        <input type="number" id="qty-water" value="0" min="0" class="w-12 text-center mx-2 border-none bg-transparent font-bold text-gray-800 focus:ring-0" readonly onchange="updateTotal()">
                                         <button type="button" onclick="adjustQty('qty-water', 1)" class="w-8 h-8 rounded-full bg-blue-600 text-white hover:bg-blue-700 flex items-center justify-center font-bold">+</button>
                                     </div>
                                 </div>
@@ -561,6 +522,23 @@
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Telefone / WhatsApp</label>
                                     <input type="tel" id="order-phone" required placeholder="(61) 99999-9999" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border">
+                                </div>
+                                <!-- Seleção de Localidade (NOVO) -->
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Bairro / Localidade</label>
+                                    <select id="order-location" required class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 border" onchange="updateTotal()">
+                                        <option value="" disabled selected>Selecione seu bairro...</option>
+                                        <option value="Águas Claras" data-fee="10.00">Águas Claras (Taxa R$ 10,00)</option>
+                                        <option value="Areal" data-fee="0.00">Areal (Taxa Grátis)</option>
+                                        <option value="Arniqueiras" data-fee="0.00">Arniqueiras (Taxa Grátis)</option>
+                                        <option value="Guará" data-fee="10.00">Guará (Taxa R$ 10,00)</option>
+                                        <option value="Núcleo Bandeirante" data-fee="10.00">Núcleo Bandeirante (Taxa R$ 10,00)</option>
+                                        <option value="Park Way" data-fee="10.00">Park Way (Taxa R$ 10,00)</option>
+                                        <option value="Riacho Fundo I" data-fee="0.00">Riacho Fundo I (Taxa Grátis)</option>
+                                        <option value="Taguatinga Norte" data-fee="10.00">Taguatinga Norte (Taxa R$ 10,00)</option>
+                                        <option value="Taguatinga Sul" data-fee="5.00">Taguatinga Sul (Taxa R$ 5,00)</option>
+                                        <option value="Vicente Pires" data-fee="10.00">Vicente Pires (Taxa R$ 10,00)</option>
+                                    </select>
                                 </div>
                                 <div class="md:col-span-2">
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Endereço Completo</label>
@@ -597,6 +575,23 @@
                                         <div class="text-sm font-semibold">Débito</div>
                                     </div>
                                 </label>
+                            </div>
+                        </div>
+
+                        <!-- Resumo do Pedido (NOVO) -->
+                        <div id="order-summary" class="bg-gray-100 p-4 rounded-xl mb-6 hidden">
+                            <h4 class="font-bold text-gray-800 mb-2">Resumo do Pedido:</h4>
+                            <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                <span>Subtotal (Itens):</span>
+                                <span id="summary-subtotal">R$ 0,00</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                <span>Taxa de Entrega:</span>
+                                <span id="summary-fee">R$ 0,00</span>
+                            </div>
+                            <div class="flex justify-between font-bold text-lg text-blue-900 border-t pt-2 border-gray-300">
+                                <span>TOTAL:</span>
+                                <span id="summary-total">R$ 0,00</span>
                             </div>
                         </div>
 
@@ -790,13 +785,44 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper.js JS --><script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        // Lógica do Carrinho de Compras / Formulário
+        const PRICE_P13 = 110.00;
+        const PRICE_WATER = 30.00;
+
         function adjustQty(id, amount) {
             const input = document.getElementById(id);
             let val = parseInt(input.value);
             val += amount;
             if (val < 0) val = 0;
             input.value = val;
+            updateTotal();
+        }
+
+        function updateTotal() {
+            const qtyP13 = parseInt(document.getElementById('qty-p13').value) || 0;
+            const qtyWater = parseInt(document.getElementById('qty-water').value) || 0;
+            const locationSelect = document.getElementById('order-location');
+            const selectedOption = locationSelect.options[locationSelect.selectedIndex];
+            
+            // Pega a taxa do atributo data-fee, se não selecionado considera 0 para o resumo inicial
+            let deliveryFee = 0;
+            if (selectedOption.value !== "") {
+                deliveryFee = parseFloat(selectedOption.getAttribute('data-fee'));
+            }
+
+            const subtotal = (qtyP13 * PRICE_P13) + (qtyWater * PRICE_WATER);
+            const total = subtotal + deliveryFee;
+
+            // Atualiza o display (Mostra a div se houver itens)
+            const summaryDiv = document.getElementById('order-summary');
+            if (qtyP13 > 0 || qtyWater > 0) {
+                summaryDiv.classList.remove('hidden');
+                
+                document.getElementById('summary-subtotal').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                document.getElementById('summary-fee').textContent = `R$ ${deliveryFee.toFixed(2).replace('.', ',')}`;
+                document.getElementById('summary-total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+            } else {
+                summaryDiv.classList.add('hidden');
+            }
         }
 
         function submitOrder(event) {
@@ -806,29 +832,48 @@
             
             const name = document.getElementById('order-name').value;
             const phone = document.getElementById('order-phone').value;
+            const locationSelect = document.getElementById('order-location');
             const address = document.getElementById('order-address').value;
             const payment = document.querySelector('input[name="payment"]:checked').value;
             
-            const qtyP13 = document.getElementById('qty-p13').value;
-            const qtyWater = document.getElementById('qty-water').value;
+            const locationName = locationSelect.value;
+            
+            if (locationName === "") {
+                alert("Por favor, selecione seu Bairro / Localidade.");
+                locationSelect.focus();
+                return;
+            }
+
+            const qtyP13 = parseInt(document.getElementById('qty-p13').value) || 0;
+            const qtyWater = parseInt(document.getElementById('qty-water').value) || 0;
             
             if (qtyP13 == 0 && qtyWater == 0) {
                 alert("Por favor, selecione pelo menos 1 Gás ou 1 Água para continuar.");
                 return;
             }
+
+            // Recalcula para garantir
+            const deliveryFee = parseFloat(locationSelect.options[locationSelect.selectedIndex].getAttribute('data-fee'));
+            const subtotal = (qtyP13 * PRICE_P13) + (qtyWater * PRICE_WATER);
+            const total = subtotal + deliveryFee;
             
             // Construção da Mensagem do WhatsApp
             let message = `*NOVO PEDIDO PELO SITE* 🚀%0A`;
             message += `-------------------------------%0A`;
             message += `👤 *Cliente:* ${name}%0A`;
             message += `📞 *Telefone:* ${phone}%0A`;
-            message += `📍 *Endereço:* ${address}%0A`;
+            message += `📍 *Local:* ${locationName} (Taxa: R$ ${deliveryFee.toFixed(2).replace('.', ',')})%0A`;
+            message += `🏠 *Endereço:* ${address}%0A`;
             message += `💳 *Pagamento:* ${payment}%0A`;
             message += `-------------------------------%0A`;
             message += `🛒 *ITENS DO PEDIDO:*%0A`;
             
-            if(qtyP13 > 0) message += `🔥 ${qtyP13}x Gás P13%0A`;
-            if(qtyWater > 0) message += `💧 ${qtyWater}x Água Mineral 20L%0A`;
+            if(qtyP13 > 0) message += `🔥 ${qtyP13}x Gás P13 (R$ 110,00 un)%0A`;
+            if(qtyWater > 0) message += `💧 ${qtyWater}x Água Mineral 20L (R$ 30,00 un)%0A`;
+            
+            message += `%0A💰 *Subtotal:* R$ ${subtotal.toFixed(2).replace('.', ',')}%0A`;
+            message += `🚚 *Taxa de Entrega:* R$ ${deliveryFee.toFixed(2).replace('.', ',')}%0A`;
+            message += `*TOTAL: R$ ${total.toFixed(2).replace('.', ',')}*%0A`;
             
             message += `%0A_Poderiam confirmar a entrega?_`;
             
