@@ -491,21 +491,41 @@
                                     </div>
                                 </div>
 
-                                <!-- Item Água -->
-                                <div class="flex items-center justify-between p-4 border rounded-xl hover:border-blue-500 transition bg-gray-50">
-                                    <div class="flex items-center gap-3">
-                                        <div class="bg-blue-100 p-2 rounded-lg text-blue-600">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" /></svg>
+                                <!-- Item Água (COM AVISO DE RETIRADA) -->
+                                <div class="border rounded-xl hover:border-blue-500 transition bg-gray-50 p-4">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div class="bg-blue-100 p-2 rounded-lg text-blue-600">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" /></svg>
+                                            </div>
+                                            <div>
+                                                <p class="font-bold text-gray-800">Água Mineral 20L</p>
+                                                <p class="text-sm text-blue-600 font-bold">R$ 30,00</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p class="font-bold text-gray-800">Água Mineral 20L</p>
-                                            <p class="text-sm text-blue-600 font-bold">R$ 30,00</p>
+                                        <div class="flex items-center">
+                                            <button type="button" onclick="adjustQty('qty-water', -1)" class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 flex items-center justify-center font-bold">-</button>
+                                            <input type="number" id="qty-water" value="0" min="0" class="w-12 text-center mx-2 border-none bg-transparent font-bold text-gray-800 focus:ring-0" readonly onchange="updateTotal()">
+                                            <button type="button" onclick="adjustQty('qty-water', 1)" class="w-8 h-8 rounded-full bg-blue-600 text-white hover:bg-blue-700 flex items-center justify-center font-bold">+</button>
                                         </div>
                                     </div>
-                                    <div class="flex items-center">
-                                        <button type="button" onclick="adjustQty('qty-water', -1)" class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 flex items-center justify-center font-bold">-</button>
-                                        <input type="number" id="qty-water" value="0" min="0" class="w-12 text-center mx-2 border-none bg-transparent font-bold text-gray-800 focus:ring-0" readonly onchange="updateTotal()">
-                                        <button type="button" onclick="adjustQty('qty-water', 1)" class="w-8 h-8 rounded-full bg-blue-600 text-white hover:bg-blue-700 flex items-center justify-center font-bold">+</button>
+                                    <!-- Aviso de Retirada (Inicialmente Oculto) -->
+                                    <div id="water-warning" class="hidden mt-3 bg-yellow-50 border-l-4 border-yellow-400 p-2 rounded">
+                                        <div class="flex">
+                                            <div class="flex-shrink-0">
+                                                <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-sm text-yellow-700 font-bold">
+                                                    Atenção: Não realizamos entrega de água mineral.
+                                                </p>
+                                                <p class="text-xs text-yellow-600 mt-1">
+                                                    Este item deve ser retirado em nosso endereço: Arniqueiras, QS 7, Lote 34.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -803,6 +823,14 @@
             const locationSelect = document.getElementById('order-location');
             const selectedOption = locationSelect.options[locationSelect.selectedIndex];
             
+            // Lógica para mostrar/esconder aviso da água
+            const waterWarning = document.getElementById('water-warning');
+            if (qtyWater > 0) {
+                waterWarning.classList.remove('hidden');
+            } else {
+                waterWarning.classList.add('hidden');
+            }
+            
             // Pega a taxa do atributo data-fee, se não selecionado considera 0 para o resumo inicial
             let deliveryFee = 0;
             if (selectedOption.value !== "") {
@@ -869,7 +897,8 @@
             message += `🛒 *ITENS DO PEDIDO:*%0A`;
             
             if(qtyP13 > 0) message += `🔥 ${qtyP13}x Gás P13 (R$ 110,00 un)%0A`;
-            if(qtyWater > 0) message += `💧 ${qtyWater}x Água Mineral 20L (R$ 30,00 un)%0A`;
+            // Adiciona aviso na mensagem do WhatsApp também para garantir
+            if(qtyWater > 0) message += `💧 ${qtyWater}x Água Mineral 20L (R$ 30,00 un) - *RETIRAR NA LOJA*%0A`;
             
             message += `%0A💰 *Subtotal:* R$ ${subtotal.toFixed(2).replace('.', ',')}%0A`;
             message += `🚚 *Taxa de Entrega:* R$ ${deliveryFee.toFixed(2).replace('.', ',')}%0A`;
