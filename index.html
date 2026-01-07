@@ -155,41 +155,56 @@
 </head>
 <body class="text-gray-800">
 
-    <!-- 0. Navigation Bar --><header class="bg-white/80 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50">
+    <!-- 0. Navigation Bar (RESPONSIVIDADE MELHORADA) -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <a href="#" class="flex items-center text-xl font-bold text-gray-900">
-                        <img src="logo.webp" alt="Logotipo Júnior Gás DF - LS Gás" class="h-10 w-auto mr-2" onerror="this.onerror=null;this.src='https://placehold.co/100x40/0D3B66/FFFFFF?text=Logo';">
-                        Júnior Gás DF - LS Gás <span class="text-[#E4202C] mx-1">-</span> <span class="font-light text-[#E4202C]">Supergasbras</span>
+                <!-- Logo Responsivo (Ajustado para evitar quebras) -->
+                <div class="flex-shrink-0 flex items-center overflow-hidden">
+                    <a href="#" class="flex items-center gap-2 group">
+                        <img src="logo.webp" alt="Logotipo Júnior Gás DF - LS Gás" class="h-8 sm:h-10 w-auto flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x40/0D3B66/FFFFFF?text=Logo';">
+                        <div class="flex flex-col">
+                            <span class="text-sm sm:text-lg font-bold text-gray-900 leading-tight whitespace-nowrap">Júnior Gás DF - LS Gás</span>
+                            <span class="text-xs sm:text-sm font-light text-[#E4202C] leading-none">Supergasbras</span>
+                        </div>
                     </a>
                 </div>
-                <nav class="hidden md:flex md:items-center md:space-x-8">
-                    <a href="#testimonials" class="text-gray-600 hover:text-[#E4202C] transition-colors">Depoimentos</a>
-                    <a href="#features" class="text-gray-600 hover:text-[#E4202C] transition-colors">Produtos</a>
-                    <a href="#why-choose" class="text-gray-600 hover:text-[#E4202C] transition-colors">Sobre nós</a>
-                    <a href="#order-form" class="text-gray-600 hover:text-[#E4202C] transition-colors font-medium">Pedido On-line</a>
-                    <a href="#faq" class="text-gray-600 hover:text-[#E4202C] transition-colors">FAQ</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex lg:items-center lg:space-x-6 xl:space-x-8">
+                    <a href="#testimonials" class="text-sm xl:text-base text-gray-600 hover:text-[#E4202C] transition-colors">Depoimentos</a>
+                    <a href="#features" class="text-sm xl:text-base text-gray-600 hover:text-[#E4202C] transition-colors">Produtos</a>
+                    <a href="#why-choose" class="text-sm xl:text-base text-gray-600 hover:text-[#E4202C] transition-colors">Sobre nós</a>
+                    <a href="#order-form" class="text-sm xl:text-base text-gray-600 hover:text-[#E4202C] transition-colors font-medium">Pedido On-line</a>
+                    <a href="#faq" class="text-sm xl:text-base text-gray-600 hover:text-[#E4202C] transition-colors">FAQ</a>
                 </nav>
+
+                <!-- Actions (Button + Mobile Toggle) -->
                 <div class="flex items-center">
-                    <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="hidden sm:inline-block bg-[#E4202C] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#b01922] transition-all transform hover:scale-105">
+                    <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="hidden lg:inline-block bg-[#E4202C] text-white font-semibold px-5 py-2.5 rounded-lg shadow-md hover:bg-[#b01922] transition-all transform hover:scale-105 text-sm xl:text-base">
                         Faça seu pedido
                     </a>
-                    <button id="mobile-menu-button" class="md:hidden ml-4 p-2 text-gray-600 hover:text-gray-900">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <button id="mobile-menu-button" class="lg:hidden ml-4 p-2 text-gray-600 hover:text-gray-900 focus:outline-none rounded-md">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 bg-white">
-            <a href="#testimonials" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2">Depoimentos</a>
-            <a href="#features" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2">Produtos</a>
-            <a href="#why-choose" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2">Sobre nós</a>
-            <a href="#order-form" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2 font-medium">Pedido On-line</a>
-            <a href="#faq" class="block text-gray-600 hover:text-[#E4202C] transition-colors py-2">FAQ</a>
-             <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="block w-full text-center bg-[#E4202C] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#b01922] transition-all mt-2">
-                Faça seu pedido
-            </a>
+
+        <!-- Mobile Menu (Ajustado) -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-20 max-h-[80vh] overflow-y-auto">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#testimonials" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-[#E4202C] hover:bg-gray-50 rounded-md transition-colors">Depoimentos</a>
+                <a href="#features" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-[#E4202C] hover:bg-gray-50 rounded-md transition-colors">Produtos</a>
+                <a href="#why-choose" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-[#E4202C] hover:bg-gray-50 rounded-md transition-colors">Sobre nós</a>
+                <a href="#order-form" class="block px-3 py-2 text-base font-medium text-[#E4202C] bg-red-50 hover:bg-red-100 rounded-md transition-colors">Pedido On-line</a>
+                <a href="#faq" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-[#E4202C] hover:bg-gray-50 rounded-md transition-colors">FAQ</a>
+                <div class="pt-4 border-t border-gray-200">
+                    <a href="https://wa.me/5561983474674?text=Ol%C3%A1,+vim+do+site.+Pode+me+ajudar?+" onclick="return gtag_report_conversion(this.href);" class="block w-full text-center bg-[#E4202C] text-white font-bold px-6 py-3 rounded-lg shadow-md hover:bg-[#b01922] transition-all">
+                        Faça seu pedido
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
